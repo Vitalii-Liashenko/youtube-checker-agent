@@ -59,14 +59,15 @@ def get_video_info(video_id):
     logger.info(f"Processing request for video ID: {video_id}")
     
     try:
-        is_russian = video_checker.is_russian_video(video_id)
-        response = jsonify({
-            "isRussian": is_russian,
-            "videoId": video_id,
-            "timestamp": datetime.now(UTC).isoformat()
-        })
-        logger.info(f"Response for video {video_id}: {response.get_json()}")
-        return response
+        with VideoChecker() as checker:
+            is_russian = checker.is_russian_video(video_id)
+            response = jsonify({
+                "isRussian": is_russian,
+                "videoId": video_id,
+                "timestamp": datetime.now(UTC).isoformat()
+            })
+            logger.info(f"Response for video {video_id}: {response.get_json()}")
+            return response
     except Exception as e:
         logger.error(f"Error processing video {video_id}: {str(e)}")
         return jsonify({
