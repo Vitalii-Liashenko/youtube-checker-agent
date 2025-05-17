@@ -6,7 +6,7 @@ load_dotenv()
 
 # Server configuration
 SERVER_HOST = os.getenv('SERVER_HOST', 'localhost')
-SERVER_PORT = int(os.getenv('SERVER_PORT', 5000))
+SERVER_PORT = int(os.getenv('SERVER_PORT', 8080))
 
 # Logging configuration
 LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
