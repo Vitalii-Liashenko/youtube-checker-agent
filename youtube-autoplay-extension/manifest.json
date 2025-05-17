@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube AutoPlay Controller",
+  "version": "1.0",
+  "description": "Controls YouTube video playback based on backend service response",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "http://localhost:8080/info/videos//*"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content/content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background/background.js"
+  }
+}
