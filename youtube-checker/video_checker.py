@@ -1,7 +1,7 @@
 import logging
 from datetime import datetime, UTC
 from typing import Optional
-from config import DEVELOPER_MODE
+from config import DEVELOPER_MODE, DEVELOPER_MODE_DEFAULT_RESPONSE
 from video_info_provider import VideoInfoProvider
 from open_ai_checker import OpenAiChecker
 from models import VideoCheckResult, Session
@@ -34,7 +34,7 @@ class VideoChecker:
         """
         if DEVELOPER_MODE:
             logger.debug("Developer mode enabled - returning False")
-            return False
+            return DEVELOPER_MODE_DEFAULT_RESPONSE
 
         session = self._session or Session()
         try:

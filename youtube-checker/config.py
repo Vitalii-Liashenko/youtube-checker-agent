@@ -18,6 +18,7 @@ OPEN_API_KEY = os.getenv('OPEN_API_KEY')
 
 # Developer mode
 DEVELOPER_MODE = os.getenv('DEVELOPER_MODE', 'False').lower() == 'true'
+DEVELOPER_MODE_DEFAULT_RESPONSE = os.getenv('DEVELOPER_MODE_DEFAULT_RESPONSE', 'False').lower() == 'true'
 
 # Database configuration
 DB_PATH = os.getenv('DB_PATH', 'video_checks.db')
