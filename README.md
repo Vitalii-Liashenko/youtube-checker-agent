@@ -88,6 +88,8 @@ youtube-checker/
 - add possibility to use other models for analysis
 - add possibility to filter short videos also
 - add possibility to tune filters for video channels - not only Russian channels but also some other undesirble content
+- add possibility to use more than one model for analysis
+- add user and app metrics collection
 
 ## License
 
